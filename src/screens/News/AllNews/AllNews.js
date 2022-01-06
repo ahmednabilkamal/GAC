@@ -7,7 +7,7 @@ import {ScrollView, View, StatusBar, LogBox} from 'react-native';
 import NewsItem from '../../../components/NewsItem/NewsItem';
 
 /**
- * Style
+ * Style & Colors
  */
 import Style from './Style';
 import Colors from '../../../constants/Colors';
@@ -22,7 +22,7 @@ const News = () => {
       <StatusBar backgroundColor={Colors.brownLight} />
 
       <ScrollView>
-        <View style={Style.screen}>
+        <View>
           <NewsItem newsImg={require('../../../../assets/news1.png')} />
           <NewsItem newsImg={require('../../../../assets/news2.png')} />
           <NewsItem newsImg={require('../../../../assets/news3.png')} />

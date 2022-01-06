@@ -6,10 +6,10 @@ import {TouchableOpacity, View, Text} from 'react-native';
  */
 import {useSelector, useDispatch} from 'react-redux';
 import {
-  showAllNewsAction,
-  showMostViewedNewsAction,
-  showRecentNewsAction,
-} from '../../../redux/actions/NewsAction/NewsAction';
+  AllNewsAction2,
+  MostViewedAction2,
+  RecentNewsAction2,
+} from '../../../redux/reducers/NewsReducers/NewsReducers';
 
 /**
  * Style
@@ -26,7 +26,7 @@ const PaymentTabs = () => {
         {news.showAllNews === true ? (
           <TouchableOpacity
             onPress={() => {
-              dispatch(showAllNewsAction(true, false, false));
+              dispatch(AllNewsAction2(true, false, false));
             }}>
             <Text style={Style.tabTextDisable}>الكل</Text>
             <Text style={Style.redPoint} />
@@ -34,7 +34,7 @@ const PaymentTabs = () => {
         ) : (
           <TouchableOpacity
             onPress={() => {
-              dispatch(showAllNewsAction(true, false, false));
+              dispatch(AllNewsAction2(true, false, false));
             }}>
             <Text style={Style.tabText}>الكل</Text>
           </TouchableOpacity>
@@ -43,7 +43,7 @@ const PaymentTabs = () => {
         {news.showRecentNews === true ? (
           <TouchableOpacity
             onPress={() => {
-              dispatch(showRecentNewsAction(false, true, false));
+              dispatch(RecentNewsAction2(false, true, false));
             }}>
             <Text style={Style.tabTextDisable}>جديد الأخبار</Text>
             <Text style={Style.redPoint} />
@@ -51,7 +51,7 @@ const PaymentTabs = () => {
         ) : (
           <TouchableOpacity
             onPress={() => {
-              dispatch(showRecentNewsAction(false, true, false));
+              dispatch(RecentNewsAction2(false, true, false));
             }}>
             <Text style={Style.tabText}>جديد الأخبار</Text>
           </TouchableOpacity>
@@ -60,7 +60,7 @@ const PaymentTabs = () => {
         {news.showMostViewed === true ? (
           <TouchableOpacity
             onPress={() => {
-              dispatch(showMostViewedNewsAction(false, false, true));
+              dispatch(MostViewedAction2(false, false, true));
             }}>
             <Text style={Style.tabTextDisable}>الأكثر مشاهده</Text>
             <Text style={Style.redPoint} />
@@ -68,7 +68,7 @@ const PaymentTabs = () => {
         ) : (
           <TouchableOpacity
             onPress={() => {
-              dispatch(showMostViewedNewsAction(false, false, true));
+              dispatch(MostViewedAction2(false, false, true));
             }}>
             <Text style={Style.tabText}>الأكثر مشاهده</Text>
           </TouchableOpacity>

@@ -40,6 +40,7 @@ const Style = StyleSheet.create({
   },
   calendarEvents: {
     backgroundColor: Colors.white,
+    marginTop: 10,
   },
 });
 

@@ -9,12 +9,12 @@ import {useSelector} from 'react-redux';
 /**
  * Components
  */
-import NewsTabs from '../NewsTabs/NewsTabs';
+import NewsTabs from '../../Tabs/NewsTabs/NewsTabs';
 
 /**
  * Screens
  */
-import AllNews from '../AllNews/AllNews';
+import AllNews from '../../News/AllNews/AllNews';
 
 /**
  * Style

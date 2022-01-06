@@ -19,7 +19,7 @@ import BackIcon from 'react-native-vector-icons/Ionicons';
  */
 import Style from './Style';
 
-const ImageHeader = ({children, style, ...props}) => {
+const EntireHeader = ({children, style, ...props}) => {
   const onClick = useNavigation();
   const {t} = useTranslation();
 
@@ -32,11 +32,7 @@ const ImageHeader = ({children, style, ...props}) => {
       <StatusBar translucent backgroundColor="transparent" />
       <View style={Style.headerImg}>
         {/* back button */}
-        <TouchableOpacity
-          style={Style.back}
-          onPress={() => {
-            onClick.navigate('NewsContainer');
-          }}>
+        <TouchableOpacity style={Style.back}>
           <BackIcon name="chevron-back" color="white" size={20} />
           <Text style={Style.backText}>{t('العوده')}</Text>
         </TouchableOpacity>
@@ -44,14 +40,13 @@ const ImageHeader = ({children, style, ...props}) => {
         {/* header title */}
         <View style={Style.headerTitleContainer}>
           <Text adjustsFontSizeToFit style={Style.headerTitle}>
-            تدريب مفتشي جمارك ابوظبي عبر تقنية الواقع الافتراضي
+            {props.headerTitle}
           </Text>
         </View>
       </View>
-
-      {children}
+      <View style={Style.content}>{children}</View>
     </ImageBackground>
   );
 };
 
-export default ImageHeader;
+export default EntireHeader;
