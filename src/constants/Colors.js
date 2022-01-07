@@ -8,6 +8,9 @@ const Colors = {
   whiteLight: '#F8F8F8',
   greyLight: '#E9E9E9',
   brownLight: '#A39161',
+  greyHeavy: '#707070',
+  black2: '#4B4B4B',
+  blue: '#0539B1',
 };
 
 export default Colors;

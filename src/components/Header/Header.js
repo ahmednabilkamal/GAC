@@ -1,7 +1,6 @@
 import React, {useEffect} from 'react';
 import {View, Text, TouchableOpacity, I18nManager} from 'react-native';
 import {useTranslation} from 'react-i18next';
-import * as Animatable from 'react-native-animatable';
 
 /**
  * Icons
