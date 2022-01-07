@@ -7,7 +7,7 @@ import {View} from 'react-native';
 import {useSelector} from 'react-redux';
 
 /**
- * Components
+ * Component
  */
 import NewsTabs from '../../Tabs/NewsTabs/NewsTabs';
 

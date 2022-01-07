@@ -48,7 +48,7 @@ const Stack = createStackNavigator();
 function AppNavigation() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName={'AppTutorial'}>
+      <Stack.Navigator initialRouteName={'Login'}>
         {/* splash & tutorial screens */}
         <Stack.Screen
           name="AppTutorial"
