@@ -16,10 +16,9 @@ const Style = StyleSheet.create({
     justifyContent: 'space-evenly',
     textAlign: 'center',
     width: width,
-    backgroundColor: 'white',
-    borderTopStartRadius: 80,
-    borderTopEndRadius: 20,
-    // borderRadius: 20,
+    // backgroundColor: 'white',
+    borderTopStartRadius: 20,
+    borderTopEndRadius: 80,
   },
   tabText: {
     marginVertical: 30,

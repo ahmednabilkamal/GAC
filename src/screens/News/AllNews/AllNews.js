@@ -1,5 +1,6 @@
 import React, {useEffect} from 'react';
 import {ScrollView, View, StatusBar, LogBox} from 'react-native';
+import * as Animatable from 'react-native-animatable';
 
 /**
  * Components
@@ -18,7 +19,7 @@ const News = () => {
   });
 
   return (
-    <View style={Style.container}>
+    <Animatable.View animation={'fadeInUpBig'} style={Style.container}>
       <StatusBar backgroundColor={Colors.brownLight} />
 
       <ScrollView>
@@ -31,7 +32,7 @@ const News = () => {
           <NewsItem newsImg={require('../../../../assets/news2.png')} />
         </View>
       </ScrollView>
-    </View>
+    </Animatable.View>
   );
 };
 

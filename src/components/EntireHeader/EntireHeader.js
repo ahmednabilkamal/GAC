@@ -6,8 +6,6 @@ import {
   Text,
   TouchableOpacity,
 } from 'react-native';
-import {useNavigation} from '@react-navigation/native';
-import {useTranslation} from 'react-i18next';
 
 /**
  * Icons
@@ -20,9 +18,6 @@ import BackIcon from 'react-native-vector-icons/Ionicons';
 import Style from './Style';
 
 const EntireHeader = ({children, style, ...props}) => {
-  const onClick = useNavigation();
-  const {t} = useTranslation();
-
   return (
     <ImageBackground
       {...props}
@@ -33,8 +28,8 @@ const EntireHeader = ({children, style, ...props}) => {
       <View style={Style.headerImg}>
         {/* back button */}
         <TouchableOpacity style={Style.back}>
+          <Text style={Style.backText}>العوده</Text>
           <BackIcon name="chevron-back" color="white" size={20} />
-          <Text style={Style.backText}>{t('العوده')}</Text>
         </TouchableOpacity>
 
         {/* header title */}

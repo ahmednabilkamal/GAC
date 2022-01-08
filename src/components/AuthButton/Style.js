@@ -20,7 +20,7 @@ const Style = StyleSheet.create({
     borderTopEndRadius: 20,
     borderTopStartRadius: 8,
     paddingVertical: 15,
-    marginVertical: 20,
+    marginVertical: 50,
   },
   title: {
     color: Colors.white,

@@ -15,6 +15,7 @@ const Style = StyleSheet.create({
     flex: 1,
     marginBottom: 10,
     width: width * 0.9,
+    //
   },
   newsTitle: {
     color: Colors.black,
@@ -30,8 +31,8 @@ const Style = StyleSheet.create({
     opacity: 0.73,
   },
   managerSpeechImg: {
-    alignSelf: 'center',
-    marginStart: 70,
+    width: width * 0.9,
+    marginStart: 20,
   },
 });
 

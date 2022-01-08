@@ -21,9 +21,9 @@ const Style = StyleSheet.create({
   },
   back: {
     position: 'absolute',
-    left: 0,
+    right: 0,
     flexDirection: 'row',
-    marginStart: 30,
+    marginEnd: 30,
     alignItems: 'center',
     marginTop: 50,
   },
@@ -31,6 +31,7 @@ const Style = StyleSheet.create({
     marginStart: 5,
     color: 'white',
     fontSize: 16,
+    textAlign: 'right',
   },
   headerTitleContainer: {
     // marginEnd: 18,
@@ -52,8 +53,8 @@ const Style = StyleSheet.create({
   },
   content: {
     backgroundColor: 'white',
-    borderTopStartRadius: 80,
-    borderTopEndRadius: 20,
+    borderTopStartRadius: 20,
+    borderTopEndRadius: 80,
     // position: 'absolute',
     // bottom: 0,
     height: height * 0.7,

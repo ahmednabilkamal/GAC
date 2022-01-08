@@ -1,4 +1,9 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet, Dimensions} from 'react-native';
+
+/**
+ * screen width
+ */
+const {height} = Dimensions.get('screen');
 
 /**
  * Colors
@@ -7,8 +12,19 @@ import Colors from '../../../constants/Colors';
 
 const Style = StyleSheet.create({
   screen: {
-    backgroundColor: Colors.white,
+    // backgroundColor: Colors.white,
+    height: height,
     flex: 1,
+  },
+  ScrollViewStyle: {
+    // marginBottom: 0,
+    marginTop: height * 0.44,
+    backgroundColor: 'white',
+    borderTopRightRadius: 60,
+    borderTopLeftRadius: 20,
+    paddingTop: '10%',
+    // marginBottom: height * 0.38,
+    // flex: 1,
   },
   container: {
     flex: 1,

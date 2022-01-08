@@ -1,4 +1,9 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet, Dimensions} from 'react-native';
+
+/**
+ * screen width
+ */
+const {width} = Dimensions.get('screen');
 
 const Style = StyleSheet.create({
   screen: {
@@ -6,7 +11,8 @@ const Style = StyleSheet.create({
     marginBottom: 10,
   },
   branchesImg: {
-    alignSelf: 'center',
+    width: width * 0.9,
+    marginStart: 20,
   },
 });
 

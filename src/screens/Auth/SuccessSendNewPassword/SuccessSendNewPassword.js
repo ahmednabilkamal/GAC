@@ -8,7 +8,11 @@ import {
   Image,
   StatusBar,
 } from 'react-native';
+import * as Animatable from 'react-native-animatable';
 
+/**
+ * Style
+ */
 import Style from './Style';
 
 const SuccessSendNewPassword = () => {
@@ -20,7 +24,7 @@ const SuccessSendNewPassword = () => {
     <ImageBackground
       style={Style.screen}
       source={require('../../../../assets/success_bg.png')}>
-      <View style={Style.container}>
+      <Animatable.View animation={'fadeInUpBig'} style={Style.container}>
         <StatusBar hidden />
         <View style={Style.successContainer}>
           <Image
@@ -49,7 +53,7 @@ const SuccessSendNewPassword = () => {
         <TouchableOpacity>
           <Text style={Style.resendAgain}>إعادة ارسال الرابط من جديد</Text>
         </TouchableOpacity>
-      </View>
+      </Animatable.View>
     </ImageBackground>
   );
 };

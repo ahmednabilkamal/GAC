@@ -1,5 +1,5 @@
 import React from 'react';
-import {View} from 'react-native';
+import * as Animatable from 'react-native-animatable';
 
 /**
  * Redux
@@ -25,13 +25,13 @@ const NewsContainer = () => {
   const news = useSelector(state => state.news);
 
   return (
-    <View style={Style.newsContainer}>
+    <Animatable.View animation={'fadeInUpBig'} style={Style.newsContainer}>
       <NewsTabs />
 
       {news.showAllNews === true ? <AllNews /> : null}
       {news.showRecentNews === true ? <AllNews /> : null}
       {news.showMostViewed === true ? <AllNews /> : null}
-    </View>
+    </Animatable.View>
   );
 };
 

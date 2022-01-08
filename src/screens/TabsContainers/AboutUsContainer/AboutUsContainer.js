@@ -1,5 +1,5 @@
 import React from 'react';
-import {View} from 'react-native';
+import * as Animatable from 'react-native-animatable';
 
 /**
  * Redux
@@ -28,7 +28,7 @@ const AboutUsContainer = () => {
   const aboutUs = useSelector(state => state.aboutUs);
 
   return (
-    <View style={Style.newsContainer}>
+    <Animatable.View animation={'fadeInUpBig'} style={Style.newsContainer}>
       <EntireHeader headerTitle="عن جمارك أبو ظبي">
         <AboutUsTabs />
 
@@ -36,7 +36,7 @@ const AboutUsContainer = () => {
         {aboutUs.showManagerSpeech === true ? <ManagerSpeech /> : null}
         {aboutUs.showOurBranches === true ? <OurBranches /> : null}
       </EntireHeader>
-    </View>
+    </Animatable.View>
   );
 };
 

@@ -1,14 +1,6 @@
-import React, {useEffect, useRef, useState} from 'react';
-import {
-  ImageBackground,
-  View,
-  LogBox,
-  Animated,
-  Text,
-  TouchableOpacity,
-  Image,
-} from 'react-native';
-import * as Animatable from 'react-native-animatable';
+import React, {useEffect} from 'react';
+import {View, LogBox, Image} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
 
 /**
  * style
@@ -16,42 +8,21 @@ import * as Animatable from 'react-native-animatable';
 import Style from './Style';
 
 const Splash = () => {
-  const fadeAnim = useRef(new Animated.Value(0)).current; // Initial value for opacity: 0
-  const [animation, setAnimation] = useState(new Animated.Value(0));
+  const onClick = useNavigation();
 
   useEffect(() => {
     LogBox.ignoreAllLogs();
-    Animated.timing(fadeAnim, {
-      toValue: 1,
-      duration: 1500,
-    }).start();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  const fadeIn = {
-    from: {
-      opacity: 1,
-    },
-    to: {
-      opacity: 0,
-    },
-  };
-
-  // const onPress = () => {
-  //   Animated.timing(fadeIn, {
-  //     toValue: 0,
-  //     duration: 1000,
-  //   }).start();
-  // };
+    setTimeout(() => {
+      onClick.replace('AppTutorial');
+    }, 1000);
+  });
 
   return (
-    <View>
-      <Animatable.View animation={fadeIn}>
-        <Image
-          style={Style.screen}
-          source={require('../../../assets/success_bg.png')}
-        />
-      </Animatable.View>
+    <View style={Style.screen}>
+      <Image
+        style={Style.logo}
+        source={require('../../../assets/tutorial_logo.png')}
+      />
     </View>
   );
 };

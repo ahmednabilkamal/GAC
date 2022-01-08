@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import {Agenda} from 'react-native-calendars';
 import {useTranslation} from 'react-i18next';
+import * as Animatable from 'react-native-animatable';
 
 /**
  * Icons
@@ -31,16 +32,17 @@ const Calender = () => {
 
   useEffect(() => {
     LogBox.ignoreAllLogs();
-    i18n.changeLanguage(i18n.language === 'ar' ? 'en' : 'ar').then(() => {
-      I18nManager.forceRTL(i18n.language === 'ar');
-    });
+    I18nManager.forceRTL(true);
+    // i18n.changeLanguage(i18n.language === 'ar' ? 'en' : 'ar').then(() => {
+
+    // });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <View style={Style.screen}>
       <StatusBar backgroundColor={Colors.brownLight} />
-      <View style={Style.monthName}>
+      <Animatable.View animation={'fadeInUpBig'} style={Style.monthName}>
         <CalenderIcon
           style={Style.calenderIcon}
           name="calendar"
@@ -48,12 +50,15 @@ const Calender = () => {
           size={30}
         />
         <Text style={Style.monthNameTxt}>{t('ديسمبر')}</Text>
-      </View>
+      </Animatable.View>
 
       <Agenda
         selectedDay={day => {
           console.log(day);
         }}
+        scrollEnabled={true}
+        showScrollIndicator={true}
+        animateScroll={true}
         // The list of items that have to be displayed in agenda. If you want to render item as empty date
         // the value of date key has to be an empty array []. If there exists no value for date key it is
         // considered that the date in question is not yet loaded
@@ -101,14 +106,14 @@ const Calender = () => {
           return <View />;
         }}
         // Specify how agenda knob should look like
-        renderKnob={() => {
-          return <View />;
-        }}
+        // renderKnob={() => {
+        //   return <View />;
+        // }}
         // Specify what should be rendered instead of ActivityIndicator
         renderEmptyData={() => {
           return (
             <ScrollView style={Style.calendarEvents}>
-              <View>
+              <Animatable.View animation={'fadeInUpBig'}>
                 <CalendarEventItem borderBottomColor="#EB454A" />
                 <CalendarEventItem borderBottomColor="#FFA700" />
                 <CalendarEventItem borderBottomColor="#B100FF" />
@@ -121,7 +126,7 @@ const Calender = () => {
                 <CalendarEventItem borderBottomColor="#FFA700" />
                 <CalendarEventItem borderBottomColor="#B100FF" />
                 <CalendarEventItem borderBottomColor="#A39161" />
-              </View>
+              </Animatable.View>
             </ScrollView>
           );
         }}
@@ -136,9 +141,9 @@ const Calender = () => {
           );
         }}
         // Hide knob button. Default = false
-        hideKnob={false}
+        // hideKnob={false}
         // When `true` and `hideKnob` prop is `false`, the knob will always be visible and the user will be able to drag the knob up and close the calendar. Default = false
-        showClosingKnob={true}
+        // showClosingKnob={true}
         // By default, agenda dates are marked if they have at least one item, but you can override this if needed
         markedDates={{
           '2022-01-06': {
@@ -146,10 +151,10 @@ const Calender = () => {
             // marked: true,
             color: 'white',
             selectedColor: '#EF3D42',
-            // theme: {
-            //   backgroundColor: 'red',
-            //   todayBackgroundColor: 'red',
-            // },
+            theme: {
+              backgroundColor: 'red',
+              todayBackgroundColor: 'red',
+            },
             customStyles: {
               container: {
                 borderRadius: 10,
@@ -177,7 +182,7 @@ const Calender = () => {
           agendaDayTextColor: 'yellow',
           agendaDayNumColor: 'green',
           agendaTodayColor: 'red',
-          agendaKnobColor: 'blue',
+          agendaKnobColor: 'grey',
           backgroundColor: '#F8F8F8',
           calendarBackground: '#F8F8F8',
           selectedDayBackgroundColor: '#EF3D42',

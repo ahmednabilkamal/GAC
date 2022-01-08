@@ -16,7 +16,7 @@ const Style = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: Colors.black,
     alignSelf: 'center',
-    marginVertical: 20,
+    marginTop: 40,
   },
   inputTitle: {
     color: Colors.black,
@@ -24,6 +24,7 @@ const Style = StyleSheet.create({
   },
   input: {
     textAlign: 'right',
+    color: Colors.black,
   },
   passwordIcon: {
     position: 'absolute',

@@ -1,9 +1,9 @@
 import {StyleSheet, Dimensions} from 'react-native';
 
 /**
- * screen width & height
+ * screen width
  */
-const {height, width} = Dimensions.get('screen');
+const {height} = Dimensions.get('screen');
 
 /**
  * Colors
@@ -15,24 +15,27 @@ const Style = StyleSheet.create({
     flex: 1,
     backgroundColor: Colors.white,
   },
-  container: {
-    // height: height,
+  ScrollViewStyle: {
+    // marginBottom: 0,
+    marginTop: height * 0.44,
+    backgroundColor: 'white',
+    borderTopRightRadius: 60,
+    borderTopLeftRadius: 20,
+    paddingTop: '10%',
+    // flex: 1,
   },
   loginFooter: {
     flexDirection: 'row',
-    // justifyContent: 'space-between',
     position: 'absolute',
     bottom: 0,
   },
   createNewAccount: {
     fontSize: 18,
     color: Colors.black,
-    // textAlign: 'right',
   },
   RePassword: {
     fontSize: 18,
     color: Colors.black,
-    // textAlign: 'left',
   },
 });
 

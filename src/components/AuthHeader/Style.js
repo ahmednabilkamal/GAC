@@ -12,7 +12,7 @@ import Colors from '../../constants/Colors';
 
 const Style = StyleSheet.create({
   header: {
-    height: height * 0.09,
+    // height: height * 0.03,
     backgroundColor: 'white',
     flexDirection: 'row-reverse',
     alignItems: 'center',

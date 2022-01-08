@@ -1,15 +1,24 @@
-import React, {useState, useEffect} from 'react';
-import {ScrollView, View, LogBox} from 'react-native';
+import React, {useState, useEffect, useRef} from 'react';
+import {View, LogBox, Animated, ScrollView} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
+import * as Animatable from 'react-native-animatable';
 
+/**
+ * Components
+ */
 import AuthButton from '../../../components/AuthButton/AuthButton';
 import AuthInput from '../../../components/Inputs/AuthInput/AuthInput';
 import AuthHeader from '../../../components/AuthHeader/AuthHeader';
+import AuthNewHeader from '../../../components/HomeHeader/AuthNewHeader';
 
+/**
+ * Style
+ */
 import Style from './Style';
 
 const ForgetPassword = () => {
   const onClick = useNavigation();
+  const scrollY = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
     LogBox.ignoreAllLogs();
@@ -26,30 +35,53 @@ const ForgetPassword = () => {
   const [email, setEmail] = useState('');
 
   return (
-    <ScrollView style={Style.screen}>
-      <View>
-        <AuthHeader
-          headerTitle="استعادة كلمة المرور"
-          onPress={() => {
-            navToLogin();
-          }}
-        />
+    <View style={Style.screen}>
+      {/* <StatusBar
+      translucent
+      backgroundColor="transparent"
+      barStyle="light-content"
+    /> */}
+      <Animatable.View>
+        <AuthNewHeader />
+      </Animatable.View>
 
-        <AuthInput
-          inputTitle="البريد الالكترونى"
-          value={email}
-          onChangeText={setEmail}
-          keyboardType="email-address"
-        />
+      <Animatable.View animation={'fadeInUpBig'}>
+        <ScrollView
+          contentContainerStyle={Style.ScrollViewStyle}
+          scrollEventThrottle={20}
+          // style={{flex: 1}}
+          showsVerticalScrollIndicator={false}
+          onScroll={Animated.event(
+            [{nativeEvent: {contentOffset: {y: scrollY}}}],
+            {useNativeDriver: true},
+          )}>
+          <View>
+            <View>
+              <AuthHeader
+                headerTitle="استعادة كلمة المرور"
+                onPress={() => {
+                  navToLogin();
+                }}
+              />
 
-        <AuthButton
-          btnTitle="إرسال"
-          onPress={() => {
-            navToSuccessSendNewPassword();
-          }}
-        />
-      </View>
-    </ScrollView>
+              <AuthInput
+                inputTitle="البريد الالكترونى"
+                value={email}
+                onChangeText={setEmail}
+                keyboardType="email-address"
+              />
+
+              <AuthButton
+                btnTitle="إرسال"
+                onPress={() => {
+                  navToSuccessSendNewPassword();
+                }}
+              />
+            </View>
+          </View>
+        </ScrollView>
+      </Animatable.View>
+    </View>
   );
 };
 

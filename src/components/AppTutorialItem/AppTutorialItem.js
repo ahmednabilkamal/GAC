@@ -8,6 +8,7 @@ import {
   SafeAreaView,
   ScrollView,
 } from 'react-native';
+import * as Animatable from 'react-native-animatable';
 
 /**
  * style & colors
@@ -48,87 +49,96 @@ const AppTutorialItem = props => {
           pagingEnabled={true}>
           {/* screen one */}
           <View style={{width, height}}>
-            <View style={Style.slider}>
-              <View style={Style.item}>
-                <ImageBackground
-                  resizeMode="stretch"
-                  style={Style.appTutorialItem}
-                  source={require('../../../assets/tutorial2.png')}>
-                  <View style={Style.fakeView} />
-                  <View style={Style.contentContainer}>
-                    <Text style={Style.title}>نسعد بإستفساراتك</Text>
-                    <Text style={Style.content}>
-                      متواجدين على مدار الساعة للرد على كافة الاستفسارات الخاصة
-                      بجمارك أبو ظبي
-                    </Text>
-                  </View>
-                </ImageBackground>
+            <Animatable.View animation={'fadeInUpBig'}>
+              <View style={Style.slider}>
+                <View style={Style.item}>
+                  <ImageBackground
+                    resizeMode="stretch"
+                    style={Style.appTutorialItem}
+                    source={require('../../../assets/tutorial2.png')}>
+                    <View style={Style.fakeView} />
+                    <View style={Style.contentContainer}>
+                      <Text style={Style.title}>نسعد بإستفساراتك</Text>
+                      <Text style={Style.content}>
+                        متواجدين على مدار الساعة للرد على كافة الاستفسارات
+                        الخاصة بجمارك أبو ظبي
+                      </Text>
+                    </View>
+                  </ImageBackground>
+                </View>
               </View>
-            </View>
+            </Animatable.View>
           </View>
 
           {/* screen two */}
           <View style={{width, height}}>
-            <View style={Style.slider}>
-              <View style={Style.item}>
-                <ImageBackground
-                  resizeMode="stretch"
-                  style={Style.appTutorialItem}
-                  source={require('../../../assets/tutorial3.png')}>
-                  <View style={Style.fakeView} />
-                  <View style={Style.contentContainer}>
-                    <Text style={Style.title}>قيم جمارك أبوظبي</Text>
-                    <Text style={Style.content}>
-                      التمكين, التعاون, الابتكار, الشراكة النزاهة, المسائلة
-                    </Text>
-                  </View>
-                </ImageBackground>
+            <Animatable.View animation={'fadeInUpBig'}>
+              <View style={Style.slider}>
+                <View style={Style.item}>
+                  <ImageBackground
+                    resizeMode="stretch"
+                    style={Style.appTutorialItem}
+                    source={require('../../../assets/tutorial3.png')}>
+                    <View style={Style.fakeView} />
+                    <View style={Style.contentContainer}>
+                      <Text style={Style.title}>قيم جمارك أبوظبي</Text>
+                      <Text style={Style.content}>
+                        التمكين, التعاون, الابتكار, الشراكة النزاهة, المسائلة
+                      </Text>
+                    </View>
+                  </ImageBackground>
+                </View>
               </View>
-            </View>
+            </Animatable.View>
           </View>
 
           {/* screen three */}
           <View style={{width, height}}>
-            <View style={Style.slider}>
-              <View style={Style.item}>
-                <ImageBackground
-                  resizeMode="stretch"
-                  style={Style.appTutorialItem}
-                  source={require('../../../assets/tutorial4.png')}>
-                  <View style={Style.fakeView} />
-                  <View style={Style.contentContainer}>
-                    <Text style={Style.title}>رؤية جمارك أبوظبي</Text>
-                    <Text style={Style.content}>
-                      هيئة جمركية رائدة عالميا, تقود التغيير سعيا لتعزيز وتسهيل
-                      التجارة وتقديم خدمات متميزة
-                    </Text>
-                  </View>
-                </ImageBackground>
+            <Animatable.View animation={'fadeInUpBig'}>
+              <View style={Style.slider}>
+                <View style={Style.item}>
+                  <ImageBackground
+                    resizeMode="stretch"
+                    style={Style.appTutorialItem}
+                    source={require('../../../assets/tutorial4.png')}>
+                    <View style={Style.fakeView} />
+                    <View style={Style.contentContainer}>
+                      <Text style={Style.title}>رؤية جمارك أبوظبي</Text>
+                      <Text style={Style.content}>
+                        هيئة جمركية رائدة عالميا, تقود التغيير سعيا لتعزيز
+                        وتسهيل التجارة وتقديم خدمات متميزة
+                      </Text>
+                    </View>
+                  </ImageBackground>
+                </View>
               </View>
-            </View>
+            </Animatable.View>
           </View>
 
           {/* screen four */}
           <View style={{width, height}}>
-            <View style={Style.slider}>
-              <View style={Style.item}>
-                <ImageBackground
-                  resizeMode="stretch"
-                  style={Style.appTutorialItem}
-                  source={require('../../../assets/tutorial1.png')}>
-                  <View style={Style.fakeView} />
-                  <View style={Style.contentContainer}>
-                    <Text style={Style.title}>خدمات جمارك أبوظبي</Text>
-                    <Text style={Style.content}>
-                      الاتفاقيات, قوائم السلع, التطبيقات التعاميم, جهات اعتماد
-                      التصديقات
-                    </Text>
-                  </View>
-                </ImageBackground>
+            <Animatable.View animation={'fadeInUpBig'}>
+              <View style={Style.slider}>
+                <View style={Style.item}>
+                  <ImageBackground
+                    resizeMode="stretch"
+                    style={Style.appTutorialItem}
+                    source={require('../../../assets/tutorial1.png')}>
+                    <View style={Style.fakeView} />
+                    <View style={Style.contentContainer}>
+                      <Text style={Style.title}>خدمات جمارك أبوظبي</Text>
+                      <Text style={Style.content}>
+                        الاتفاقيات, قوائم السلع, التطبيقات التعاميم, جهات اعتماد
+                        التصديقات
+                      </Text>
+                    </View>
+                  </ImageBackground>
+                </View>
               </View>
-            </View>
+            </Animatable.View>
           </View>
         </ScrollView>
+        {/* </Animatable.View> */}
       </SafeAreaView>
 
       {/* slider indicator */}

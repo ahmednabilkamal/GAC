@@ -1,11 +1,7 @@
 import React, {useEffect} from 'react';
-import {View, Image, ScrollView, I18nManager, LogBox} from 'react-native';
+import {Image, ScrollView, I18nManager, LogBox} from 'react-native';
 import {useTranslation} from 'react-i18next';
-
-/**
- * Animation
- */
-import FadeInView from '../../Animation/FadeIn';
+import * as Animatable from 'react-native-animatable';
 
 /**
  * Style
@@ -25,14 +21,13 @@ const OurBranches = () => {
 
   return (
     <ScrollView>
-      <View style={Style.screen}>
-        <FadeInView>
-          <Image
-            style={Style.branchesImg}
-            source={require('../../../assets/branch.png')}
-          />
-        </FadeInView>
-      </View>
+      <Animatable.View animation={'fadeInUpBig'} style={Style.screen}>
+        <Image
+          resizeMode="contain"
+          style={Style.branchesImg}
+          source={require('../../../assets/branch.png')}
+        />
+      </Animatable.View>
     </ScrollView>
   );
 };
