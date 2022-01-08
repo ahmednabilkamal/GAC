@@ -36,6 +36,7 @@ import SuccessSendNewPassword from '../screens/Auth/SuccessSendNewPassword/Succe
  * Splash & Tutorial Screens
  */
 import AppTutorial from '../screens/AppTutorial/AppTutorial';
+import Splash from '../screens/Splash/Splash';
 
 /**
  * Component
@@ -48,8 +49,13 @@ const Stack = createStackNavigator();
 function AppNavigation() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName={'Login'}>
+      <Stack.Navigator initialRouteName={'Splash'}>
         {/* splash & tutorial screens */}
+        <Stack.Screen
+          name="Splash"
+          component={Splash}
+          options={{headerShown: false}}
+        />
         <Stack.Screen
           name="AppTutorial"
           component={AppTutorial}

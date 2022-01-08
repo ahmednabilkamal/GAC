@@ -6,9 +6,16 @@ import {
   Image,
   StatusBar,
   TouchableOpacity,
-  ImageBackground,
 } from 'react-native';
 
+/**
+ * component
+ */
+import AppTutorialItem from '../../components/AppTutorialItem/AppTutorialItem';
+
+/**
+ * style
+ */
 import Style from './Style';
 
 const AppTutorial = () => {
@@ -18,23 +25,13 @@ const AppTutorial = () => {
 
   return (
     <View style={Style.screen}>
-      <View style={{flex: 1}}>
-        <StatusBar hidden />
-        <Image
-          style={Style.logo}
-          source={require('../../../assets/tutorial_logo.png')}
-        />
+      <StatusBar hidden />
+      <Image
+        style={Style.logo}
+        source={require('../../../assets/tutorial_logo.png')}
+      />
 
-        <View style={Style.slider}>
-          <View style={Style.item}>
-            <ImageBackground
-              resizeMode="contain"
-              style={Style.appTutorialItem}
-              source={require('../../../assets/tutorial3.png')}
-            />
-          </View>
-        </View>
-      </View>
+      <AppTutorialItem />
 
       <TouchableOpacity style={Style.startContainer}>
         <Image source={require('../../../assets/start_tutorial.png')} />
