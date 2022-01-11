@@ -11,6 +11,7 @@ const Colors = {
   greyHeavy: '#707070',
   black2: '#4B4B4B',
   blue: '#0539B1',
+  redHeavy: '#B20005',
 };
 
 export default Colors;

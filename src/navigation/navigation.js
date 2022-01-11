@@ -39,6 +39,19 @@ import AppTutorial from '../screens/AppTutorial/AppTutorial';
 import Splash from '../screens/Splash/Splash';
 
 /**
+ * Gallery Screens
+ */
+import GalleryContainer from '../screens/TabsContainers/GalleryContainer/GalleryContainer';
+import ImageGallery from '../screens/ImageGallery/ImageGallery';
+import VideoGallery from '../screens/VideoGallery/VideoGallery';
+
+/**
+ * Multi Media & Profile Screens
+ */
+import MultiMedia from '../screens/MultiMedia/MultiMedia';
+import Profile from '../screens/Profile/Profile';
+
+/**
  * Component
  */
 import Header from '../components/Header/Header';
@@ -49,7 +62,7 @@ const Stack = createStackNavigator();
 function AppNavigation() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName={'Splash'}>
+      <Stack.Navigator initialRouteName={'Profile'}>
         {/* splash & tutorial screens */}
         <Stack.Screen
           name="Splash"
@@ -130,6 +143,35 @@ function AppNavigation() {
         <Stack.Screen
           name="OurBranches"
           component={OurBranches}
+          options={{headerShown: false}}
+        />
+
+        {/* gallery screens */}
+        <Stack.Screen
+          name="GalleryContainer"
+          component={GalleryContainer}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="ImageGallery"
+          component={ImageGallery}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="VideoGallery"
+          component={VideoGallery}
+          options={{headerShown: false}}
+        />
+
+        {/* multimedia & profile screen */}
+        <Stack.Screen
+          name="MultiMedia"
+          component={MultiMedia}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Profile"
+          component={Profile}
           options={{headerShown: false}}
         />
       </Stack.Navigator>
